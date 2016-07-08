@@ -1,2 +1,2 @@
 # Blackjack
-First JS Game 
+Blackjack - First JS Game 
