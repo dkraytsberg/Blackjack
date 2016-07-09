@@ -1,0 +1,41 @@
+Information for blackjack
+
+The Pack
+The standard 52 pack is used with six decks (312 cards)
+There is a blank plastic card, which is never dealt - usually
+to indicate when it will be time for the cards to be reshuffled
+
+Object of The Game
+Each participant attempts to beat the dealer by getting a count
+as close to 21 as possible without going over 21
+
+Card Values/Scoring
+It is up to each individual player if an ace is worth 1 or 11
+Face cards are 10 and any other card is its pip value
+
+Betting
+Before the deal begins, each player places a bet
+Minimum - $ 2
+Maximum - $ 500
+
+The Shuffle and Cut
+Dealer shuffles portions of the pack until all the cards have
+been mixed and combines
+Designates that the last 60 to 75 cards will not be used
+
+The Deal
+When all players placed their bets - dealer gives one card
+face up to each player and one card face up to himself.
+
+Naturals
+Ace + ten card = blackjack - the dealer immediately pays
+the player one and a half times the amount of his bet
+OR the dealer collects the bets of all players who do not have
+naturals
+
+If the dealer and another player both have naturals, the bet
+is a standoff and player takes back his chips
+
+The Play
+The Player goes first and must decide whether to "stand" (not ask
+for another card) or hit.
