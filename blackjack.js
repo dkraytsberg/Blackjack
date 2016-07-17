@@ -30,20 +30,12 @@ function generateCards() {
 var deck = {
   cards: generateCards(),
   draw: function(amount) {
-    var card = [];
-    var cardNumber = [];
-    var randomCard;
-    for(var i = 1; i <= amount; i++) {
-      randomCard = Math.round(Math.random() * 52);
-      // if(randomCard == cardNumber[num])
-      cardNumber.push(randomCard);
-      // need to make sure if the random number was chosen or not
-      // figure out to take out the element of generateCards
-      var index = this.cards.indexOf(this.cards[randomCard]);
-      if(index > -1 && typeof(index) != "undefined") {
-        this.cards.splice(index, 1);
-      }
-      card.push(this.cards[randomCard]);
+    var cards = [];
+    for(var i = 0; i < amount && this.cards.length > 0; i++) {
+      var randomCard = Math.round(Math.random() * this.cards.length - 1);
+      
+      cards.push(this.cards.splice(randomCard, 1))
+
     }
     return card;
   },
