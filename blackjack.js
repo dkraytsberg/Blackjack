@@ -1,64 +1,66 @@
 // give the type of suits
 var heart = "heart", club = "club", spade = "spade", diamond = "diamond";
 
-// value of card
-var ace = 11, two = 2, three = 3, four = 4, five = 5, six = 6, seven = 7,
-eight = 8, nine = 9, ten = 10, jack = 10, queen = 10, king = 10;
+// cardName array
+var cardName = ["ace", "two", "three", "four", "five", "six", "seven",
+              "eight", "nine", "ten", "jack", "queen", "king"];
 
+// suit array
 var suits = [heart, diamond, spade, club];
 
-// make a simple js object to represent a card
-function makeCard(suit, number) {
-  return {suit: suit, number: number};
+// make a simple js object
+function makeCard(suit, cardName, num) {
+  return {suit: suit, cardName: cardName};
 }
 
-// Create a numbered card for each suit
 function generateCards() {
 
-  // make an empty array of cards
+  // make empty array of cards
   var cards = [];
 
-  for(var num = two; num <= ace; num++) {
-      suits.forEach(function(suit){
-        cards.push(makeCard(suit, num));
-      });
-  }
+  cardName.forEach(function(cardName) {
+    suits.forEach(function(suit) {
+      cards.push(makeCard(suit, cardName));
+    });
+  });
+
   return cards;
 }
 
-var deck = { //<---------------- WRITE THIS
-    cards: [],
-    draw: function(amount){
-        console.log("TODO -- i should return a card and remove it from my internal list of cards");
-    },
-    add: function(card){ //this one's for free
-        this.cards.push(card);
-        return card;
+var deck = {
+  cards: generateCards(),
+  draw: function(amount) {
+    var card = [];
+    var cardNumber = [];
+    var randomCard;
+    for(var i = 1; i <= amount; i++) {
+      randomCard = Math.round(Math.random() * 52);
+      // if(randomCard == cardNumber[num])
+      cardNumber.push(randomCard);
+      // need to make sure if the random number was chosen or not
+      // figure out to take out the element of generateCards
+      var index = this.cards.indexOf(this.cards[randomCard]);
+      if(index > -1 && typeof(index) != "undefined") {
+        this.cards.splice(index, 1);
+      }
+      card.push(this.cards[randomCard]);
     }
+    return card;
+  },
+  add: function(card) {
+      this.cards.push(card);
+      return card;
+  },
 }
 
-/*
+var player1 = new Object();
+var player2 = new Object();
 
+// shuffle
+// console.log(generateCards());
 
-//this function runs automatically bacause it is enclosed in parenthesis
-//and then called immediately with the '()' after it.
-//comment it out (or not)
-
-(function(){
-    var cards = generateCards();
-
-    console.log('here are some cards: ');
-    console.log(cards[4]);
-    console.log(cards[9]);
-    console.log(cards[15]);
-    console.log('...');
-})();
-
-var cards = generateCards();
-
-console.log('here are some cards: ');
-console.log(cards[4]);
-console.log(cards[9]);
-console.log(cards[15]);
+var player1 = deck.draw(15);
+console.log(player1);
+// var player2 = deck.draw(2);
+// console.log(player2);
 console.log('...');
-*/
